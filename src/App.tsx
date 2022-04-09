@@ -9,8 +9,14 @@ import {
   MediaQuery,
   Burger,
   useMantineTheme,
+  Box,
+  Group,
+  ActionIcon,
 } from "@mantine/core";
 import "./App.css";
+import { BiNote, BiSun } from "react-icons/bi";
+import { AiOutlineGithub } from "react-icons/ai";
+import { FaStickyNote, FaJira } from "react-icons/fa";
 
 function App() {
   const theme = useMantineTheme();
@@ -34,20 +40,29 @@ function App() {
           p="md"
           hiddenBreakpoint="sm"
           hidden={!opened}
-          width={{ sm: 200, lg: 300 }}
+          width={{ sm: 200, lg: 100 }}
         >
-          <Text>Application navbar</Text>
+          <Group direction="column" position="center">
+            <ActionIcon size="xl" variant="light" color="yellow" radius="xl">
+              <FaStickyNote size="18" />
+            </ActionIcon>
+            <ActionIcon size="xl" variant="light" color="green" radius="xl">
+              <AiOutlineGithub size="18" />
+            </ActionIcon>
+            <ActionIcon size="xl" variant="light" color="blue" radius="xl">
+              <FaJira size="18" />
+            </ActionIcon>
+          </Group>
         </Navbar>
       }
-      footer={
-        <Footer height={60} p="md">
-          Application footer
-        </Footer>
-      }
       header={
-        <Header height={70} p="md">
-          <div
-            style={{ display: "flex", alignItems: "center", height: "100%" }}
+        <Header height={60} p="md">
+          <Box
+            style={{
+              display: "flex",
+              alignItems: "center",
+              height: "100%",
+            }}
           >
             <MediaQuery largerThan="sm" styles={{ display: "none" }}>
               <Burger
@@ -59,8 +74,13 @@ function App() {
               />
             </MediaQuery>
 
-            <Text>Application header</Text>
-          </div>
+            <Group>
+              <Text size="md">Application header</Text>
+              <ActionIcon>
+                <BiSun />
+              </ActionIcon>
+            </Group>
+          </Box>
         </Header>
       }
     >

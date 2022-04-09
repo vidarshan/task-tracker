@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import {
   AppShell,
   Navbar,
@@ -12,6 +12,7 @@ import {
   Box,
   Group,
   ActionIcon,
+  useMantineColorScheme,
 } from "@mantine/core";
 import { BiNote, BiSun } from "react-icons/bi";
 import { FaStickyNote, FaJira, FaGithub, FaUserCircle } from "react-icons/fa";
@@ -23,6 +24,13 @@ interface ILayoutProps {
 const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({ children }) => {
   const theme = useMantineTheme();
   const [opened, setOpened] = useState(false);
+
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+  const dark = colorScheme === "dark";
+
+  useEffect(() => {
+    console.log(theme);
+  }, []);
 
   return (
     <AppShell
@@ -92,7 +100,7 @@ const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({ children }) => {
 
             <Group>
               <Text size="md">Application header</Text>
-              <ActionIcon>
+              <ActionIcon onClick={() => toggleColorScheme()}>
                 <BiSun />
               </ActionIcon>
             </Group>

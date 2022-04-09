@@ -25,9 +25,6 @@ import Tasks from "./pages/Tasks";
 import NotFound from "./pages/NotFound";
 
 function App() {
-  const theme = useMantineTheme();
-  const [opened, setOpened] = useState(false);
-
   const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
@@ -43,7 +40,7 @@ function App() {
       colorScheme={colorScheme}
       toggleColorScheme={toggleColorScheme}
     >
-      <MantineProvider withGlobalStyles={true}>
+      <MantineProvider theme={{ colorScheme: "dark" }} withGlobalStyles={true}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Tasks />} />

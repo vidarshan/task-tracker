@@ -25,6 +25,7 @@ import Tasks from "./pages/Tasks";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/authentication/Login";
 import SignUp from "./pages/authentication/SignUp";
+import Profile from "./pages/authentication/Profile";
 
 function App() {
   const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
@@ -48,6 +49,7 @@ function App() {
             <Route path="/" element={<Tasks />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

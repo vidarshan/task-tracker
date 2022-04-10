@@ -12,24 +12,31 @@ import {
   Title,
 } from "@mantine/core";
 import React from "react";
-import { BiLock, BiTrash, BiTrashAlt, BiUser } from "react-icons/bi";
+import { BiLock, BiLogOut, BiTrash, BiTrashAlt, BiUser } from "react-icons/bi";
 import Layout from "../../layout/Layout";
 
 const Profile = () => {
   return (
     <Layout>
       <Group position="apart">
-        <Group>
-          <Avatar size="lg" src="null" />
+        <Group position="left">
+          <Avatar color="grape" size="lg" radius="xl">
+            J
+          </Avatar>
           <Box>
-            <Title order={6}>John Doe</Title>
+            <Title order={4}>John Doe</Title>
             <Text size="xs">john@gmail.com</Text>
           </Box>
         </Group>
-        <Button size="xs" radius="md">
+        <Button leftIcon={<BiLogOut />} size="xs" radius="md" color="grape">
           Log out
         </Button>
       </Group>
+      <Grid>
+        <Col mt={30}>
+          <Divider />
+        </Col>
+      </Grid>
       <Grid>
         <Col mt={30} span={12}>
           <Title order={4}>Profile Information</Title>

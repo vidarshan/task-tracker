@@ -23,6 +23,7 @@ import { useHotkeys, useLocalStorageValue } from "@mantine/hooks";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Tasks from "./pages/Tasks";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/authentication/Login";
 
 function App() {
   const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
@@ -40,10 +41,11 @@ function App() {
       colorScheme={colorScheme}
       toggleColorScheme={toggleColorScheme}
     >
-      <MantineProvider theme={{ colorScheme: "dark" }} withGlobalStyles={true}>
+      <MantineProvider theme={{ colorScheme: "light" }} withGlobalStyles={true}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Tasks />} />
+            <Route path="/login" element={<Login />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

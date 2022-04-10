@@ -13,8 +13,28 @@ import {
   Group,
   ActionIcon,
   useMantineColorScheme,
+  Modal,
+  Grid,
+  Col,
+  TextInput,
+  Textarea,
+  Select,
+  MultiSelect,
+  Switch,
+  Button,
 } from "@mantine/core";
-import { BiNote, BiSun } from "react-icons/bi";
+import {
+  BiCalendar,
+  BiListCheck,
+  BiListMinus,
+  BiNote,
+  BiParagraph,
+  BiStar,
+  BiSun,
+  BiText,
+  BiTime,
+  BiTimer,
+} from "react-icons/bi";
 import {
   FaStickyNote,
   FaJira,
@@ -23,6 +43,7 @@ import {
   FaPlus,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { DatePicker, TimeInput } from "@mantine/dates";
 
 interface ILayoutProps {
   children: any;
@@ -32,6 +53,8 @@ const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({ children }) => {
   const theme = useMantineTheme();
   const navigate = useNavigate();
   const [opened, setOpened] = useState(false);
+  const [createModalOpened, setCreateModalOpened] = useState(false);
+  const [data, setData] = useState(["React", "Angular", "Svelte", "Vue"]);
 
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const dark = colorScheme === "dark";
@@ -69,7 +92,13 @@ const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({ children }) => {
             }}
           >
             <Group direction="column" position="center">
-              <ActionIcon size="xl" variant="hover" color="red" radius="xl">
+              <ActionIcon
+                size="xl"
+                variant="filled"
+                color="grape"
+                radius="xl"
+                onClick={() => setCreateModalOpened(true)}
+              >
                 <FaPlus size="16" />
               </ActionIcon>
               <ActionIcon
@@ -143,6 +172,122 @@ const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({ children }) => {
         </Header>
       }
     >
+      <Modal
+        opened={createModalOpened}
+        onClose={() => setCreateModalOpened(false)}
+        centered
+        size="lg"
+        closeOnClickOutside={false}
+        title="Create new Task"
+        radius="md"
+      >
+        <Grid>
+          <Col span={12}>
+            <TextInput
+              icon={<BiText />}
+              label="Task Name"
+              radius="md"
+              placeholder="Name"
+              required
+            />
+          </Col>
+          <Col span={12}>
+            <Textarea
+              icon={<BiParagraph />}
+              label="Task Description"
+              radius="md"
+              placeholder="Description"
+              required
+            />
+          </Col>
+          <Col span={12}>
+            <Select
+              icon={<BiStar />}
+              label="Task Priority"
+              radius="md"
+              placeholder="Priority"
+              data={[
+                {
+                  value: "high",
+                  label: "High Priority",
+                },
+                {
+                  value: "mid",
+                  label: "Medium Priority",
+                },
+                {
+                  value: "low",
+                  label: "Low Priority",
+                },
+              ]}
+              required
+            />
+          </Col>
+          <Col span={12}>
+            <MultiSelect
+              icon={<BiListMinus />}
+              label="Add Labels"
+              data={data}
+              placeholder="Labels"
+              radius="md"
+              searchable
+              creatable
+              getCreateLabel={(query) => `+ Create ${query}`}
+              onCreate={(query) => setData((current) => [...current, query])}
+            />
+          </Col>
+          <Col span={12}>
+            <Switch color="grape" label="Start Now" />
+          </Col>
+          <Col span={6}>
+            <DatePicker
+              icon={<BiCalendar />}
+              radius="md"
+              placeholder="Start Date"
+              label="Start Date"
+              required
+            />
+          </Col>
+          <Col span={6}>
+            <TimeInput
+              icon={<BiTimer />}
+              radius="md"
+              placeholder="Start Time"
+              label="Start Time"
+              required
+            />
+          </Col>
+          <Col span={6}>
+            <DatePicker
+              icon={<BiCalendar />}
+              radius="md"
+              placeholder="Due Date"
+              label="Due Date"
+              required
+            />
+          </Col>
+          <Col span={6}>
+            <TimeInput
+              icon={<BiTimer />}
+              radius="md"
+              placeholder="Due Time"
+              label="Due Time"
+              required
+            />
+          </Col>
+
+          <Col span={12}>
+            <Button
+              color="grape"
+              leftIcon={<BiListCheck />}
+              radius="md"
+              fullWidth
+            >
+              Create Task
+            </Button>
+          </Col>
+        </Grid>
+      </Modal>
       {children}
     </AppShell>
   );

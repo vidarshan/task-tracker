@@ -1,11 +1,22 @@
-import { Col, Divider, Grid, Tabs } from "@mantine/core";
-import React from "react";
+import { Button, Col, Divider, Grid, Modal, Tabs } from "@mantine/core";
+import React, { useState } from "react";
 import Task from "../components/Task";
 import Layout from "../layout/Layout";
 
 const Tasks = () => {
+  const [opened, setOpened] = useState(false);
+
   return (
     <Layout>
+      <Modal
+        opened={opened}
+        onClose={() => setOpened(false)}
+        centered
+        closeOnClickOutside={false}
+        title="Create new Task"
+        radius="lg"
+      ></Modal>
+      <Button onClick={() => setOpened(true)}>Open</Button>
       <Tabs color="violet" variant="default" tabPadding="xl">
         <Tabs.Tab label="Current">
           <Grid>

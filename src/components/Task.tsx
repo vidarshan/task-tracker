@@ -15,7 +15,16 @@ import {
 } from "@mantine/core";
 import { Action } from "history";
 import React from "react";
-import { BiCheck, BiLink, BiPencil, BiTime, BiTrashAlt } from "react-icons/bi";
+import {
+  BiCheck,
+  BiDownArrowAlt,
+  BiLink,
+  BiPencil,
+  BiStar,
+  BiTask,
+  BiTime,
+  BiTrashAlt,
+} from "react-icons/bi";
 import {
   FaCheck,
   FaEdit,
@@ -30,7 +39,14 @@ import {
 const Task = () => {
   return (
     <Accordion>
-      <Accordion.Item label="Customization">
+      <Accordion.Item
+        label="Today"
+        icon={
+          <ThemeIcon radius="xl" color="green" variant="light">
+            <BiDownArrowAlt size={14} />
+          </ThemeIcon>
+        }
+      >
         <Card mt={20} radius="md" shadow="xl" withBorder>
           <Group direction="row" position="apart">
             <Group>
@@ -39,6 +55,9 @@ const Task = () => {
               </Text>
               <Badge size="xs" variant="light" color="red">
                 High Priority
+              </Badge>
+              <Badge size="xs" variant="light" color="green">
+                in Progress
               </Badge>
             </Group>
             <Group direction="row" position="left">
@@ -58,21 +77,21 @@ const Task = () => {
               Should be done by 12:00 PM
             </Text>
           </Group>
-          <Divider mt={16} />
-          <Text size="sm" mt={20} weight={500}>
+
+          <Text size="xs" mt={20} weight={500}>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi
             cupiditate officiis, doloribus atque vel reiciendis esse, quo nam
             dolorem, dolor illum? Esse non expedita debitis quae saepe veritatis
             officiis similique?
           </Text>
           <Group mt={20}>
-            <ActionIcon variant="light" radius="xl" color="green">
+            <ActionIcon size="sm" variant="light" radius="xl" color="green">
               <FaGithub />
             </ActionIcon>
-            <ActionIcon variant="light" radius="xl" color="blue">
+            <ActionIcon size="sm" variant="light" radius="xl" color="blue">
               <FaJira />
             </ActionIcon>
-            <ActionIcon variant="light" radius="xl" color="gray">
+            <ActionIcon size="sm" variant="light" radius="xl" color="gray">
               <FaLink />
             </ActionIcon>
           </Group>

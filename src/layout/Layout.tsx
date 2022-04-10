@@ -15,7 +15,13 @@ import {
   useMantineColorScheme,
 } from "@mantine/core";
 import { BiNote, BiSun } from "react-icons/bi";
-import { FaStickyNote, FaJira, FaGithub, FaUserCircle } from "react-icons/fa";
+import {
+  FaStickyNote,
+  FaJira,
+  FaGithub,
+  FaUserCircle,
+  FaPlus,
+} from "react-icons/fa";
 
 interface ILayoutProps {
   children: any;
@@ -61,6 +67,9 @@ const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({ children }) => {
             }}
           >
             <Group direction="column" position="center">
+              <ActionIcon size="xl" variant="hover" color="red" radius="xl">
+                <FaPlus size="16" />
+              </ActionIcon>
               <ActionIcon size="lg" variant="light" color="yellow" radius="xl">
                 <FaStickyNote size="16" />
               </ActionIcon>

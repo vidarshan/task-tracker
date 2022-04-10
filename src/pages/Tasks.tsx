@@ -97,7 +97,7 @@ const Tasks = () => {
             />
           </Col>
           <Col span={12}>
-            <Switch color="green" label="Start Now" />
+            <Switch color="grape" label="Start Now" />
           </Col>
           <Col span={6}>
             <DatePicker
@@ -138,7 +138,7 @@ const Tasks = () => {
 
           <Col span={12}>
             <Button
-              color="green"
+              color="grape"
               leftIcon={<BiListCheck />}
               radius="md"
               fullWidth

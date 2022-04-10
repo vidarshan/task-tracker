@@ -58,7 +58,7 @@ const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({ children }) => {
           p="md"
           hiddenBreakpoint="sm"
           hidden={!opened}
-          width={{ sm: 200, lg: 100 }}
+          width={{ sm: 100, lg: 100 }}
         >
           <Box
             sx={{

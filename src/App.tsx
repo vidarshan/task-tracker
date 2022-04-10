@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AppShell,
   Navbar,
@@ -45,7 +45,7 @@ function App() {
       colorScheme={colorScheme}
       toggleColorScheme={toggleColorScheme}
     >
-      <MantineProvider theme={{ colorScheme: "light" }} withGlobalStyles={true}>
+      <MantineProvider theme={{ colorScheme }} withGlobalStyles={true}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Tasks />} />

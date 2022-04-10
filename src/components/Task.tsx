@@ -7,7 +7,7 @@ const Task = () => {
     <Card radius="lg" shadow="xl">
       <Group direction="row" position="apart">
         <Group>
-          <Title order={5}>Bug Fix</Title>
+          <Title order={5}>Bug Fixes</Title>
           <Badge color="red" radius="md" variant="light">
             High
           </Badge>

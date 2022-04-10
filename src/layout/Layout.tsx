@@ -72,13 +72,31 @@ const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({ children }) => {
               <ActionIcon size="xl" variant="hover" color="red" radius="xl">
                 <FaPlus size="16" />
               </ActionIcon>
-              <ActionIcon size="lg" variant="light" color="yellow" radius="xl">
+              <ActionIcon
+                size="lg"
+                variant="light"
+                color="yellow"
+                radius="xl"
+                onClick={() => navigate("/")}
+              >
                 <FaStickyNote size="16" />
               </ActionIcon>
-              <ActionIcon size="lg" variant="light" color="green" radius="xl">
+              <ActionIcon
+                size="lg"
+                variant="light"
+                color="green"
+                radius="xl"
+                onClick={() => navigate("/github")}
+              >
                 <FaGithub size="16" />
               </ActionIcon>
-              <ActionIcon size="lg" variant="light" color="blue" radius="xl">
+              <ActionIcon
+                size="lg"
+                variant="light"
+                color="blue"
+                radius="xl"
+                onClick={() => navigate("/jira")}
+              >
                 <FaJira size="16" />
               </ActionIcon>
             </Group>

@@ -22,6 +22,7 @@ import {
   FaUserCircle,
   FaPlus,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 interface ILayoutProps {
   children: any;
@@ -29,6 +30,7 @@ interface ILayoutProps {
 
 const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({ children }) => {
   const theme = useMantineTheme();
+  const navigate = useNavigate();
   const [opened, setOpened] = useState(false);
 
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -81,7 +83,13 @@ const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({ children }) => {
               </ActionIcon>
             </Group>
             <Group direction="column" position="center">
-              <ActionIcon size="lg" variant="light" color="gray" radius="xl">
+              <ActionIcon
+                size="lg"
+                variant="light"
+                color="gray"
+                radius="xl"
+                onClick={() => navigate("/profile")}
+              >
                 <FaUserCircle size="16" />
               </ActionIcon>
             </Group>

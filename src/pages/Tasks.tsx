@@ -9,20 +9,8 @@ const Tasks = () => {
       <Tabs color="violet" variant="default" tabPadding="xl">
         <Tabs.Tab label="Current">
           <Grid>
-            <Col>
-              <Divider label="Today" variant="dashed" />
-            </Col>
             <Col span={12}>
               <Task />
-            </Col>
-            <Col span={12}>
-              <Task />
-            </Col>
-            <Col span={12}>
-              <Task />
-            </Col>
-            <Col>
-              <Divider label="Tomorrow" variant="dashed" />
             </Col>
           </Grid>
         </Tabs.Tab>

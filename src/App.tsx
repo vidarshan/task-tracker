@@ -26,6 +26,8 @@ import NotFound from "./pages/NotFound";
 import Login from "./pages/authentication/Login";
 import SignUp from "./pages/authentication/SignUp";
 import Profile from "./pages/authentication/Profile";
+import Jira from "./pages/jira/Jira";
+import Github from "./pages/github/Github";
 
 function App() {
   const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
@@ -48,6 +50,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Tasks />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/jira" element={<Jira />} />
+            <Route path="/github" element={<Github />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<NotFound />} />

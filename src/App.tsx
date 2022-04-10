@@ -24,6 +24,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Tasks from "./pages/Tasks";
 import NotFound from "./pages/NotFound";
 import Login from "./pages/authentication/Login";
+import SignUp from "./pages/authentication/SignUp";
 
 function App() {
   const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
@@ -46,6 +47,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Tasks />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

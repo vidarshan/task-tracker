@@ -1,10 +1,8 @@
-import React, { PropsWithChildren, useEffect, useState } from "react";
+import React, { PropsWithChildren, useState } from "react";
 import {
   AppShell,
   Navbar,
   Header,
-  Footer,
-  Aside,
   Text,
   MediaQuery,
   Burger,
@@ -27,12 +25,10 @@ import {
   BiCalendar,
   BiListCheck,
   BiListMinus,
-  BiNote,
   BiParagraph,
   BiStar,
   BiSun,
   BiText,
-  BiTime,
   BiTimer,
 } from "react-icons/bi";
 import {
@@ -56,13 +52,7 @@ const Layout: React.FC<PropsWithChildren<ILayoutProps>> = ({ children }) => {
   const [createModalOpened, setCreateModalOpened] = useState(false);
   const [data, setData] = useState(["React", "Angular", "Svelte", "Vue"]);
 
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  const dark = colorScheme === "dark";
-
-  useEffect(() => {
-    console.log(theme);
-  }, []);
-
+  const { toggleColorScheme } = useMantineColorScheme();
   return (
     <AppShell
       styles={{

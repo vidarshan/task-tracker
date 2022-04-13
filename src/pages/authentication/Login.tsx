@@ -2,16 +2,11 @@ import {
   Box,
   Button,
   Card,
-  Col,
-  Container,
-  Grid,
-  Group,
   PasswordInput,
   Text,
   TextInput,
   Title,
 } from "@mantine/core";
-import React from "react";
 import { BiAt, BiKey } from "react-icons/bi";
 
 const Login = () => {

@@ -1,32 +1,5 @@
-import {
-  Button,
-  Checkbox,
-  Col,
-  Divider,
-  Grid,
-  Modal,
-  MultiSelect,
-  Select,
-  Switch,
-  Tabs,
-  Textarea,
-  TextInput,
-  Title,
-} from "@mantine/core";
-import { DatePicker, TimeInput } from "@mantine/dates";
-import React, { useState } from "react";
-import {
-  BiCalendar,
-  BiCheck,
-  BiListCheck,
-  BiListMinus,
-  BiMinus,
-  BiParagraph,
-  BiStar,
-  BiText,
-  BiTime,
-  BiTimer,
-} from "react-icons/bi";
+import { Col, Grid, Tabs, Title } from "@mantine/core";
+import { BiCheck, BiMinus, BiTime } from "react-icons/bi";
 import Task from "../components/Task";
 import Layout from "../layout/Layout";
 

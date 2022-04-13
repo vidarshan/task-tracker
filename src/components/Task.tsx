@@ -1,40 +1,14 @@
 import {
   Card,
-  Title,
   Text,
   Badge,
   Group,
   ActionIcon,
   Accordion,
   ThemeIcon,
-  Divider,
-  Box,
-  Grid,
-  Col,
-  Anchor,
 } from "@mantine/core";
-import { Action } from "history";
-import React from "react";
-import {
-  BiCheck,
-  BiDownArrowAlt,
-  BiLink,
-  BiPencil,
-  BiStar,
-  BiTask,
-  BiTime,
-  BiTrashAlt,
-} from "react-icons/bi";
-import {
-  FaCheck,
-  FaEdit,
-  FaGithub,
-  FaJira,
-  FaLink,
-  FaStop,
-  FaStopCircle,
-  FaTrash,
-} from "react-icons/fa";
+import { BiCheck, BiDownArrowAlt, BiPencil, BiTrashAlt } from "react-icons/bi";
+import { FaGithub, FaJira, FaLink } from "react-icons/fa";
 
 const Task = () => {
   return (

@@ -11,8 +11,7 @@ import {
   TextInput,
   Title,
 } from "@mantine/core";
-import React from "react";
-import { BiLock, BiLogOut, BiTrash, BiTrashAlt, BiUser } from "react-icons/bi";
+import { BiLock, BiLogOut, BiTrashAlt, BiUser } from "react-icons/bi";
 import Layout from "../../layout/Layout";
 
 const Profile = () => {

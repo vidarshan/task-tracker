@@ -1,6 +1,5 @@
-import { Alert } from "@mantine/core";
-import React from "react";
-import { BiHappy, BiSad } from "react-icons/bi";
+import { Alert, Text } from "@mantine/core";
+import { BiHappy } from "react-icons/bi";
 
 const EmptyAlert = () => {
   return (
@@ -8,9 +7,11 @@ const EmptyAlert = () => {
       radius="md"
       icon={<BiHappy size={16} />}
       title="No Pull Requests"
-      color="indigo"
+      color="blue"
     >
-      You have no pull requests that needs reviewing or merging.
+      <Text size="sm" weight={500}>
+        You have no pull requests that needs reviewing or merging.
+      </Text>
     </Alert>
   );
 };

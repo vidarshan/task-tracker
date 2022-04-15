@@ -1,6 +1,6 @@
 import { Button, Card, Group, Text, ThemeIcon } from "@mantine/core";
 import React from "react";
-import { BiLink } from "react-icons/bi";
+import { BiArrowToRight, BiLink } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 
 const PRCard = () => {
@@ -21,7 +21,7 @@ const PRCard = () => {
           </span>
         </Group>
 
-        <Button color="grape" leftIcon={<BiLink />} radius="md">
+        <Button color="grape" leftIcon={<BiArrowToRight />} radius="md">
           View
         </Button>
       </Group>

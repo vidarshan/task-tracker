@@ -6,10 +6,10 @@ import Layout from "../layout/Layout";
 const Tasks = () => {
   return (
     <Layout>
-      <Title mb={20} order={3}>
+      <Title mb={20} order={4}>
         Tasks
       </Title>
-      <Tabs color="grape" variant="default" tabPadding="xl">
+      <Tabs color="grape" variant="pills" tabPadding="xl">
         <Tabs.Tab icon={<BiTime />} label="Current">
           <Grid>
             <Col span={12}>
